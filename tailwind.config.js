@@ -25,6 +25,7 @@ module.exports = {
       'white': '#FFFFFF',
       'black': '#141D2F',
       'very-dark-blue-gray': '#1E2A47',
+      'error': '#F74646'
     },
   },
   plugins: [],

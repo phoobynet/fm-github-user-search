@@ -48,16 +48,31 @@
     @apply grid grid-cols-[2rem_auto] grid-rows-4 text-light-blue-gray text-[13px] dark:text-white;
 
     .icon {
-      @apply fill-light-gray dark:fill-white;
-
       &.notAvailable {
         @apply opacity-50;
       }
 
+      svg {
+        path {
+          @apply fill-light-gray dark:fill-white;
+        }
+      }
     }
 
     .value {
       @apply truncate text-ellipsis;
+      &.notAvailable {
+        @apply opacity-50;
+        &:before {
+          content: 'Not Available';
+        }
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

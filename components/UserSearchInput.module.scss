@@ -1,15 +1,23 @@
 .userSearchInput {
-  @apply grid grid-cols-[2.9rem_11.9rem_84px] items-center h-[60px] bg-white dark:bg-very-dark-blue-gray rounded-2xl shadow-lg w-[327px] max-w-[327px] tablet:w-[573px] desktop:w-[730px];
+  @apply grid grid-cols-[2.9rem_1fr_84px] items-center h-[60px] bg-white dark:bg-very-dark-blue-gray rounded-2xl shadow-lg w-[327px] max-w-[327px] tablet:w-[573px] desktop:w-[730px] pr-2;
 
   .iconSearch {
     @apply place-self-center h-5 w-5 ml-1.5;
   }
 
-  input {
-    @apply h-full w-full dark:bg-very-dark-blue-gray dark:text-white outline-none border-none;
+  .inputContainer {
+    @apply w-full relative;
 
-    &:placeholder-shown {
-      @apply text-[13px] leading-[25px] truncate text-ellipsis text-light-blue-gray dark:text-white;
+    input {
+      @apply h-full w-full dark:bg-very-dark-blue-gray dark:text-white outline-none border-none relative;
+
+      &:placeholder-shown {
+        @apply text-[13px] leading-[25px] truncate text-ellipsis text-light-blue-gray dark:text-white;
+      }
     }
+  }
+
+  .noResults {
+    @apply absolute text-error text-[13px] font-bold pr-1 right-0 top-0 bg-white h-10 pt-1  dark:bg-very-dark-blue-gray;
   }
 }

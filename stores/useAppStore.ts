@@ -9,6 +9,7 @@ export interface UseAppStore {
   storeColorScheme: (scheme: ColorScheme) => void
   toggleColorScheme: () => void
   username: string
+  lastUsername: string
   setUsername: (username: string) => void
   user?: GithubUser
   search: () => Promise<void>
@@ -40,9 +41,13 @@ export const useAppStore = create<UseAppStore>((set, get) => {
       })
     },
     user: undefined,
+    lastUsername: '',
     async search (): Promise<void> {
       try {
         const username = get().username
+        set({
+          lastUsername: username,
+        })
 
         if (username.trim().length === 0) {
           return
