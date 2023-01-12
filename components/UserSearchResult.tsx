@@ -6,6 +6,7 @@ import IconCompany from '@/components/IconCompany'
 import IconTwitter from '@/components/IconTwitter'
 import IconLocation from '@/components/IconLocation'
 import IconWebsite from '@/components/IconWebsite'
+import { motion } from 'framer-motion'
 
 export default function UserSearchResult () {
   const user = useAppStore(state => state.user)
@@ -35,7 +36,18 @@ export default function UserSearchResult () {
   }
 
   return (
-    <div className={styles.userSearchResult}>
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0.5,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{ duration: 0.5 }}
+      className={styles.userSearchResult}
+    >
       <div className={styles.heading}>
         <img
           src={user.avatar_url}
@@ -92,7 +104,7 @@ export default function UserSearchResult () {
           value={user.company}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

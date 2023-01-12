@@ -28,10 +28,14 @@ export default function UserSearchInput () {
 
   useEffect(() => {
     if (notFound) {
-      inputRef.current?.select()
-      inputRef.current?.focus()
+      selectAll()
     }
   }, [notFound])
+
+  const selectAll = () => {
+    inputRef.current?.select()
+    inputRef.current?.focus()
+  }
 
   const onKeyUp: KeyboardEventHandler<HTMLInputElement> = async (e) => {
     if (e.key === 'Enter') {
@@ -44,6 +48,7 @@ export default function UserSearchInput () {
       className={`${styles.userSearchInput} ${notFound
         ? styles.noResults
         : ''}`}
+      onClick={selectAll}
     >
       <Image
         src={iconSearch}
