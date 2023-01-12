@@ -1,11 +1,18 @@
 import { create } from 'zustand'
 import { ColorScheme } from '@/types/ColorScheme'
 import { colorSchemeStore } from '../lib/colorSchemeStore'
+import { GithubUser } from '@/types/GithubUser'
+import axios from 'axios'
 
 export interface UseAppStore {
   colorScheme: ColorScheme
   storeColorScheme: (scheme: ColorScheme) => void
   toggleColorScheme: () => void
+  username: string
+  setUsername: (username: string) => void
+  user?: GithubUser
+  search: () => Promise<void>
+  searching: boolean
 }
 
 export const useAppStore = create<UseAppStore>((set, get) => {
@@ -26,5 +33,49 @@ export const useAppStore = create<UseAppStore>((set, get) => {
         colorScheme,
       })
     },
+    username: '',
+    setUsername (username: string = '') {
+      set({
+        username: username.trim(),
+      })
+    },
+    user: undefined,
+    async search (): Promise<void> {
+      try {
+        const username = get().username
+
+        if (username.trim().length === 0) {
+          return
+        }
+
+        set({ searching: true })
+        const user = await axios.get<GithubUser | undefined>('/api/search', {
+          params: {
+            username,
+          },
+          validateStatus: (status) => status < 400 || status === 404,
+        }).then(r => {
+          if (r.status === 404) {
+            return undefined
+          }
+
+          return r.data
+        })
+
+        console.log(user)
+
+        set({
+          user,
+          searching: false,
+        })
+      } catch (e) {
+        console.error('Search failed: ', e)
+      } finally {
+        set({
+          searching: false,
+        })
+      }
+    },
+    searching: false,
   }
 })

@@ -1,3 +1,30 @@
 .userSearchResult {
-  @apply grid grid-rows-4 rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray;
+  @apply grid grid-rows-[6.4rem_auto_auto_auto] rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray max-w-[327px] tablet:max-w-[573px] desktop:max-w-[730px] px-6 pt-8 h-[517px];
+
+  .heading {
+    @apply grid grid-cols-[5.6rem_auto] grid-rows-[4.35rem];
+
+    .avatar {
+      @apply w-[70px] h-[70px] rounded-full object-contain;
+    }
+
+    .headingRight {
+      @apply grid auto-rows-auto;
+      .name {
+        @apply font-bold text-[16px];
+      }
+
+      .login {
+        @apply text-blue font-normal text-[13px];
+      }
+
+      .joined {
+        @apply text-[13px] text-light-gray self-end dark:text-white;
+      }
+    }
+  }
+
+  .bio {
+    @apply text-light-blue-gray text-[13px] leading-[25px] dark:text-white;
+  }
 }

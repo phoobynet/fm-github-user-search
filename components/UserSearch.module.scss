@@ -1,5 +1,5 @@
 .userSearch {
-  @apply grid grid-rows-[4.5rem_4.8rem_auto] w-[327px] tablet:w-[573px] desktop:w-[730px] mt-[2rem];
+  @apply grid grid-rows-[4.5rem_4.8rem_auto] max-w-[327px] tablet:max-w-[573px] desktop:max-w-[730px] mt-[2rem];
 
   .headerContainer {
     @apply items-start;

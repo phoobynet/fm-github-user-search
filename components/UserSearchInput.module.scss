@@ -1,5 +1,5 @@
 .userSearchInput {
-  @apply grid grid-cols-[2.9rem_11.9rem_84px] items-center h-[60px] bg-white dark:bg-very-dark-blue-gray rounded-2xl shadow-lg;
+  @apply grid grid-cols-[2.9rem_11.9rem_84px] items-center h-[60px] bg-white dark:bg-very-dark-blue-gray rounded-2xl shadow-lg w-[327px] max-w-[327px] tablet:w-[573px] desktop:w-[730px];
 
   .iconSearch {
     @apply place-self-center h-5 w-5 ml-1.5;
