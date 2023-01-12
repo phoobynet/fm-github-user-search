@@ -64,6 +64,7 @@ export default function UserSearchInput () {
           value={username}
           onInput={(e) => setUsername((e.target as HTMLInputElement).value)}
           onKeyUp={onKeyUp}
+          spellCheck={false}
         />
         {notFound && <div className={styles.noResults}>No results</div>}
       </div>
