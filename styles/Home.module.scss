@@ -1,1 +1,4 @@
-.main {}
+.main {
+  @apply flex flex-col items-center h-screen;
+  @apply bg-very-light-gray dark:bg-black text-black dark:text-white;
+}

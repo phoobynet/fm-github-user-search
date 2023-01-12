@@ -4,10 +4,11 @@ import Image from 'next/image'
 import iconMoon from '@/assets/icon-moon.svg'
 import iconSun from '@/assets/icon-sun.svg'
 import { useAppStore } from '@/stores/useAppStore'
+import styles from './ColorSchemeToggle.module.scss'
 
 export default function ColorSchemeToggle () {
   const colorScheme = useAppStore(state => state.colorScheme)
-  const storeColorScheme = useAppStore(state => state.storeColorScheme)
+  const toggleColorScheme = useAppStore(state => state.toggleColorScheme)
 
   const imgSrc = useMemo(() => colorScheme === ColorScheme.dark
     ? iconSun
@@ -18,8 +19,11 @@ export default function ColorSchemeToggle () {
     : 'dark', [colorScheme])
 
   return (
-    <button className="">
-      <div>{caption}</div>
+    <button
+      className={styles.colorSchemeToggle}
+      onClick={() => toggleColorScheme()}
+    >
+      <span className={styles.caption}>{caption}</span>
       <Image
         src={imgSrc}
         alt=""

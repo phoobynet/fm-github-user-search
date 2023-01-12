@@ -2,6 +2,7 @@ import { ColorScheme } from '@/types/ColorScheme'
 
 const KEY = 'fm-github-user-search.color-scheme'
 
+// TODO: Integration pending during development (polypane issues)
 export const colorSchemeStore = {
   get (): ColorScheme {
     const actual = localStorage.getItem(KEY)

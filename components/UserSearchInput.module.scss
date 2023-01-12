@@ -1,0 +1,15 @@
+.userSearchInput {
+  @apply grid grid-cols-[2.9rem_11.9rem_84px] items-center h-[60px] bg-white dark:bg-very-dark-blue-gray rounded-2xl shadow-lg;
+
+  .iconSearch {
+    @apply place-self-center h-5 w-5 ml-1.5;
+  }
+
+  input {
+    @apply h-full w-full dark:bg-very-dark-blue-gray dark:text-white outline-none border-none;
+
+    &:placeholder-shown {
+      @apply text-[13px] leading-[25px] truncate text-ellipsis text-light-blue-gray dark:text-white;
+    }
+  }
+}

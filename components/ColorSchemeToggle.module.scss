@@ -1,0 +1,8 @@
+.colorSchemeToggle {
+  @apply flex gap-3 items-end;
+
+  span.caption {
+    @apply uppercase text-[13px] font-bold tracking-[2.5px] text-light-blue-gray;
+    @apply dark:text-white;
+  }
+}
