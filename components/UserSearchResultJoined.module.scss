@@ -1,0 +1,5 @@
+.userSearchResultJoined {
+  @apply text-[13px] text-light-gray self-end dark:text-white;
+  @apply tablet:text-[15px];
+  @apply desktop:self-start;
+}

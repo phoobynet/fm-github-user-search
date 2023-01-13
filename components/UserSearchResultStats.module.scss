@@ -1,0 +1,20 @@
+.userSearchResultStats {
+  @apply grid grid-cols-3 bg-very-light-gray dark:bg-black rounded-xl h-[85px] py-3 px-5;
+  @apply tablet:px-8;
+  @apply desktop:col-start-1 desktop:row-span-2;
+
+  .stat {
+    @apply grid grid-rows-2 items-center;
+    @apply tablet:justify-start tablet:grid-rows-[1.7rem_auto];
+
+    :first-child {
+      @apply text-[11px] text-center font-normal;
+      @apply tablet:text-[13px];
+    }
+
+    :last-child {
+      @apply text-[16px] text-center font-bold;
+      @apply tablet:text-[22px] tablet:text-left;
+    }
+  }
+}

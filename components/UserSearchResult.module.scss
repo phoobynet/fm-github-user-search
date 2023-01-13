@@ -1,11 +1,13 @@
 .userSearchResult {
-  @apply grid grid-rows-[6.4rem_6.2rem_6.8rem_9rem] rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray max-w-[327px] px-6 pt-8 h-[517px];
+  @apply rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray max-w-[327px] px-6 pt-8 h-[517px];
+  @apply grid grid-rows-[6.4rem_6.2rem_6.8rem_9rem];
   @apply tablet:max-w-[573px] tablet:grid-rows-[8.9rem_5rem_7.4rem_4.8rem] tablet:pt-9 tablet:px-10 tablet:max-h-[481px];
-  @apply desktop:max-w-[730px] desktop:grid-cols-2 desktop:grid-rows-1;
+  @apply desktop:max-w-[730px] desktop:grid-rows-[8rem_auto] desktop:grid-cols-2;
 
   .heading {
     @apply grid grid-cols-[5.6rem_auto] grid-rows-[4.35rem];
     @apply tablet:grid-cols-[9.9rem_auto] tablet:grid-rows-[7rem];
+    @apply desktop:col-span-2;
 
     .avatar {
       @apply w-[70px] h-[70px] rounded-full object-contain;
@@ -15,6 +17,7 @@
     .headingRight {
       @apply grid auto-rows-auto;
       @apply tablet:mt-3 tablet:mb-2;
+      @apply desktop:grid-cols-2 desktop:grid-rows-2 desktop:grid-flow-col;
 
       .name {
         @apply font-bold text-[16px];
@@ -29,17 +32,20 @@
       .joined {
         @apply text-[13px] text-light-gray self-end dark:text-white;
         @apply tablet:text-[15px];
+        @apply desktop:self-start;
       }
     }
   }
 
   .bio {
     @apply text-light-blue-gray text-[13px] leading-[25px] dark:text-white;
+    @apply desktop:col-start-2 desktop:row-start-2;
   }
 
   .stats {
     @apply grid grid-cols-3 bg-very-light-gray dark:bg-black rounded-xl h-[85px] py-3 px-5;
     @apply tablet:px-8;
+    @apply desktop:col-start-1 desktop:row-span-2;
 
     .stat {
       @apply grid grid-rows-2 items-center;
@@ -58,7 +64,6 @@
   }
 
   .links {
-    @apply grid text-light-blue-gray text-[13px] dark:text-white;
-    @apply tablet:grid-cols-2 tablet:grid-rows-2 tablet:gap-x-14 tablet:grid-flow-col;
+
   }
 }
