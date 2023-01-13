@@ -2,7 +2,7 @@
   @apply rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray max-w-[327px] px-6 pt-8 h-[517px];
   @apply grid grid-rows-[repeat(3,1.5rem)_8rem_6.8rem_auto] grid-cols-[5.5rem_auto_auto];
   @apply tablet:max-w-[573px] tablet:max-h-[481px] tablet:grid-rows-[3.5rem_2rem_2rem_6.5rem_7.5rem_auto] tablet:grid-cols-[9.1rem_auto_auto] tablet:gap-x-7;
-  @apply desktop:max-h-[419px] desktop:max-w-[730px] desktop:grid-cols-2 desktop:pt-[1.8rem];
+  @apply desktop:max-h-[419px] desktop:max-w-[730px] desktop:grid-rows-[3.5rem_2rem_2rem_2rem_7.5rem_auto] desktop:grid-cols-[9.1rem_auto_auto] tablet:gap-x-7 desktop:pt-[1.8rem];
 
   .avatar {
     @apply row-span-3 col-start-1 row-start-1;
@@ -29,22 +29,17 @@
   .bio {
     @apply row-start-4 col-span-3 pt-8;
     @apply tablet:pt-7 tablet:px-4;
+    @apply desktop:row-start-2 desktop:row-end-5 desktop:col-start-2 desktop:col-end-4 tablet:px-0;
   }
 
   .stats {
     @apply row-start-5 col-span-3;
     @apply tablet:px-4;
+    @apply desktop:col-start-2 desktop:col-end-4 tablet:px-0;
   }
 
   .links {
     @apply row-start-6 col-span-3;
     @apply tablet:px-4;
   }
-
-  //.userSummary {
-  //  @apply grid grid-cols-3 grid-rows-[1.5rem_1.5rem_auto];
-  //  @apply tablet:grid-cols-[9.8rem_auto_auto] tablet:grid-rows-[3.3rem_2rem_auto];
-  //  @apply desktop:max-h-[117px] desktop:col-span-2 desktop:gap-x-[2rem] desktop:grid-cols-[8rem_auto_auto] desktop:grid-rows-[2rem_2rem_auto] desktop:pt-4;
-  //
-  //}
 }
