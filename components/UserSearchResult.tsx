@@ -11,8 +11,9 @@ import { useAppStore } from '@/stores/useAppStore'
 
 export default function UserSearchResult () {
   const user = useAppStore(state => state.user)
+  const searching = useAppStore(state => state.searching)
 
-  if (!user) {
+  if (!user || searching) {
     return null
   }
 
