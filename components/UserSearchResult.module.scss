@@ -1,7 +1,7 @@
 .userSearchResult {
   @apply grid grid-rows-[6.4rem_6.2rem_6.8rem_9rem] rounded-2xl shadow-lg bg-white dark:bg-very-dark-blue-gray max-w-[327px] px-6 pt-8 h-[517px];
   @apply tablet:max-w-[573px] tablet:grid-rows-[8.9rem_5rem_7.4rem_4.8rem] tablet:pt-9 tablet:px-10 tablet:max-h-[481px];
-  @apply desktop:max-w-[730px];
+  @apply desktop:max-w-[730px] desktop:grid-cols-2 desktop:grid-rows-1;
 
   .heading {
     @apply grid grid-cols-[5.6rem_auto] grid-rows-[4.35rem];

@@ -1,7 +1,7 @@
 .userSearch {
   @apply grid grid-rows-[4.5rem_4.8rem_auto] max-w-[327px] mt-[2rem];
   @apply tablet:max-w-[573px] tablet:grid-rows-[4.5rem_6rem_481px] tablet:-mt-[0.9rem];
-  @apply desktop:max-w-[730px];
+  @apply desktop:max-w-[730px] desktop:grid-rows-[4.5rem_6rem_419px] desktop:-mt-[0.9rem];
 
   .headerContainer {
     @apply items-start;
