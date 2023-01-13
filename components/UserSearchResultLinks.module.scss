@@ -1,4 +1,4 @@
 .userSearchResultLinks {
-  @apply grid text-light-blue-gray text-[13px] dark:text-white;
+  @apply grid text-light-blue-gray text-[13px] gap-y-4 dark:text-white;
   @apply tablet:grid-cols-2 tablet:grid-rows-2 tablet:gap-x-14 tablet:grid-flow-col;
 }

@@ -1,13 +1,5 @@
 import styles from './UserSearchResult.module.scss'
-import { useAppStore } from '@/stores/useAppStore'
-import { useMemo } from 'react'
-import { format, parseISO } from 'date-fns'
-import IconCompany from '@/components/IconCompany'
-import IconTwitter from '@/components/IconTwitter'
-import IconLocation from '@/components/IconLocation'
-import IconWebsite from '@/components/IconWebsite'
 import { motion } from 'framer-motion'
-import UserSearchResultLink from '@/components/UserSearchResultLink'
 import UserSearchResultAvatar from '@/components/UserSearchResultAvatar'
 import UserSearchResultName from '@/components/UserSearchResultName'
 import UserSearchResultLogin from '@/components/UserSearchResultLogin'
@@ -30,18 +22,27 @@ export default function UserSearchResult () {
       transition={{ duration: 0.5 }}
       className={styles.userSearchResult}
     >
-      <div className={styles.heading}>
+      <div className={styles.avatar}>
         <UserSearchResultAvatar />
-        <div className={styles.headingRight}>
-          <UserSearchResultName />
-          <UserSearchResultLogin />
-          <UserSearchResultJoined />
-        </div>
       </div>
-
-      <UserSearchResultBio />
-      <UserSearchResultStats />
-      <UserSearchResultLinks />
+      <div className={styles.name}>
+        <UserSearchResultName />
+      </div>
+      <div className={styles.login}>
+        <UserSearchResultLogin />
+      </div>
+      <div className={styles.joined}>
+        <UserSearchResultJoined />
+      </div>
+      <div className={styles.bio}>
+        <UserSearchResultBio />
+      </div>
+      <div className={styles.stats}>
+        <UserSearchResultStats />
+      </div>
+      <div className={styles.links}>
+        <UserSearchResultLinks />
+      </div>
     </motion.div>
   )
 }

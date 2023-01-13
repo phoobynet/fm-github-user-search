@@ -6,13 +6,13 @@ import UserSearchResult from '@/components/UserSearchResult'
 export default function UserSearch () {
   return (
     <div className={styles.userSearch}>
-      <div className={styles.headerContainer}>
+      <div className={styles.header}>
         <UserSearchHeader />
       </div>
-      <div className={styles.searchInputContainer}>
+      <div className={styles.input}>
         <UserSearchInput />
       </div>
-      <div className={styles.searchResultContainer}>
+      <div className={styles.result}>
         <UserSearchResult />
       </div>
     </div>
