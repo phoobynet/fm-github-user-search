@@ -1,3 +1,4 @@
 .userSearchInputButton {
   @apply bg-blue text-white py-3 px-2 rounded-lg font-bold text-[14px] w-full hover:bg-light-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply tablet:text-[16px];
 }
