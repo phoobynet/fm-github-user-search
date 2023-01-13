@@ -28,20 +28,20 @@
   }
 
   .bio {
-    @apply row-start-4 col-start-1 col-end-3 pt-8;
-    @apply tablet:pt-7 tablet:px-4;
+    @apply row-start-4 col-start-1 col-span-3 pt-8;
+    @apply tablet:pt-7 tablet:px-4 tablet:col-span-3;
     @apply desktop:row-start-3 desktop:row-end-5 desktop:col-start-2 desktop:col-span-2 desktop:px-0 desktop:pt-0;
   }
 
   .stats {
     @apply row-start-5 col-span-3;
-    @apply tablet:px-4;
-    @apply desktop:col-start-2 desktop:col-end-4 tablet:px-0;
+    @apply tablet:mx-[.8rem];
+    @apply desktop:col-start-2 desktop:col-end-4 desktop:mx-0;
   }
 
   .links {
     @apply row-start-6 col-span-3;
-    @apply tablet:px-4;
-    @apply desktop:col-start-2 desktop:col-end-4 tablet:px-1;
+    @apply tablet:mx-[.8rem];
+    @apply desktop:col-start-2 desktop:col-end-4 desktop:mx-0;
   }
 }

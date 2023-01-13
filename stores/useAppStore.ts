@@ -1,11 +1,13 @@
 import { create } from 'zustand'
 import { ColorScheme } from '@/types/ColorScheme'
-import { colorSchemeStore } from '../lib/colorSchemeStore'
 import { GithubUser } from '@/types/GithubUser'
 import axios from 'axios'
 
+const KEY = 'fm-github-user-search.color-scheme'
+
 export interface UseAppStore {
-  colorScheme: ColorScheme
+  colorScheme?: ColorScheme
+  loadColorScheme: () => void
   storeColorScheme: (scheme: ColorScheme) => void
   toggleColorScheme: () => void
   username: string
@@ -18,9 +20,31 @@ export interface UseAppStore {
 
 export const useAppStore = create<UseAppStore>((set, get) => {
   return {
-    colorScheme: ColorScheme.dark,
+    colorScheme: undefined,
+    loadColorScheme () {
+      const storedColorScheme = localStorage.getItem(KEY)
+
+      let colorScheme: ColorScheme
+
+      if (storedColorScheme === 'dark') {
+        colorScheme = ColorScheme.dark
+      } else {
+        colorScheme = ColorScheme.light
+      }
+
+      document.documentElement.dataset['mode'] = storedColorScheme || ''
+
+      set({
+        colorScheme,
+      })
+    },
     storeColorScheme (colorScheme: ColorScheme): void {
-      colorSchemeStore.set(colorScheme)
+      const value = colorScheme === ColorScheme.dark
+        ? 'dark'
+        : 'light'
+
+      localStorage.setItem(KEY, value)
+      document.documentElement.dataset['mode'] = value
       set({
         colorScheme,
       })
@@ -29,10 +53,8 @@ export const useAppStore = create<UseAppStore>((set, get) => {
       const colorScheme = get().colorScheme === ColorScheme.dark
         ? ColorScheme.light
         : ColorScheme.dark
-      colorSchemeStore.set(colorScheme)
-      set({
-        colorScheme,
-      })
+
+      get().storeColorScheme(colorScheme)
     },
     username: '',
     setUsername (username: string = '') {
@@ -84,3 +106,4 @@ export const useAppStore = create<UseAppStore>((set, get) => {
     searching: false,
   }
 })
+

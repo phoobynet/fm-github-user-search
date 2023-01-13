@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import UserSearch from '@/components/UserSearch'
 import styles from '@/styles/Home.module.scss'
-import { usePreferColorScheme } from '@/hooks/usePreferColorScheme'
 
 export default function Home () {
-  usePreferColorScheme()
   return (
     <>
       <Head>
