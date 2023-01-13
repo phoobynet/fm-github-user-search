@@ -1,0 +1,32 @@
+.userLinkSearchResult {
+  @apply grid grid-cols-[2rem_auto];
+  @apply tablet:grid-cols-[2.1rem_auto];
+  .icon {
+    &.notAvailable {
+      @apply opacity-50;
+    }
+
+    svg {
+      path {
+        @apply fill-light-gray dark:fill-white;
+      }
+    }
+  }
+
+  .value {
+    @apply truncate text-ellipsis;
+    @apply tablet:text-[15px];
+    &.notAvailable {
+      @apply opacity-50;
+      &:before {
+        content: 'Not Available';
+      }
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

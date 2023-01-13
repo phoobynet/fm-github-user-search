@@ -1,6 +1,6 @@
 .userSearch {
   @apply grid grid-rows-[4.5rem_4.8rem_auto] max-w-[327px] mt-[2rem];
-  @apply tablet:max-w-[573px] tablet:mt-[1.5rem] tablet:grid-rows-[4.5rem_6rem_1fr];
+  @apply tablet:max-w-[573px] tablet:grid-rows-[4.5rem_6rem_481px] tablet:-mt-[0.9rem];
   @apply desktop:max-w-[730px];
 
   .headerContainer {
