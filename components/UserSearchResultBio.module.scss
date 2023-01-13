@@ -2,4 +2,8 @@
   @apply text-light-blue-gray text-[13px] leading-[25px] dark:text-white;
   @apply tablet:text-[15px];
   @apply desktop:col-start-2 desktop:row-start-2;
+
+  &.empty {
+    @apply opacity-50;
+  }
 }

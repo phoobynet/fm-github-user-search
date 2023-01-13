@@ -21,7 +21,9 @@ export default function UserSearchResultBio () {
 
   return (
     <div
-      className={styles.userSearchResultBio}
+      className={`${styles.userSearchResultBio} ${!!user.bio
+        ? ''
+        : styles.empty}`}
     >{bio}</div>
   )
 }

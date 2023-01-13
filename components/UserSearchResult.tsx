@@ -7,8 +7,15 @@ import UserSearchResultJoined from '@/components/UserSearchResultJoined'
 import UserSearchResultBio from '@/components/UserSearchResultBio'
 import UserSearchResultStats from '@/components/UserSearchResultStats'
 import UserSearchResultLinks from '@/components/UserSearchResultLinks'
+import { useAppStore } from '@/stores/useAppStore'
 
 export default function UserSearchResult () {
+  const user = useAppStore(state => state.user)
+
+  if (!user) {
+    return null
+  }
+
   return (
     <motion.div
       initial={{

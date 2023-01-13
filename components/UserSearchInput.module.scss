@@ -21,6 +21,7 @@
   }
 
   .noResults {
-    @apply absolute text-error text-[13px] font-bold pr-1 right-0 top-0 bg-white h-10 pt-1  dark:bg-very-dark-blue-gray;
+    @apply absolute text-error text-[13px] font-bold pr-1 right-0 top-0 bg-white h-10 pt-1 dark:bg-very-dark-blue-gray;
+    @apply tablet:right-4;
   }
 }
