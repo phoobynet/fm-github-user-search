@@ -11,7 +11,7 @@
   }
 
   .name {
-    @apply col-start-2 col-end-4;
+    @apply col-start-2 col-end-4 truncate text-ellipsis;
     @apply tablet:self-end;
     @apply desktop:col-span-1 desktop:self-start;
   }
